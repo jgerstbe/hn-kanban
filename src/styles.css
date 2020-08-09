@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+html,
+body {
+  font-family: sans-serif;
+  background-color: #222831;
+  color: white;
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: #222831; /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: 222831; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 1px solid lightgrey; /* creates padding around scroll thumb */
+}
