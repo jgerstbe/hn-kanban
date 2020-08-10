@@ -48,4 +48,8 @@ export class dragDropComponent implements OnInit {
       );
     }
   }
+
+  foregoneTime(time: number) {
+    return "some time";
+  }
 }

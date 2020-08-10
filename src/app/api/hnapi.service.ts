@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpParams, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 // Model
 import { HnItem } from "./hnItem";
 // Util
 import { Observable, forkJoin } from "rxjs";
-import { map, flatMap, switchMap } from "rxjs/operators";
+import { map, switchMap } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
@@ -14,8 +14,13 @@ export class HnApiService {
 
   constructor(private http: HttpClient) {}
 
-  getStoryItems(path: string): Observable<HnItem[]> {
+  getStoryItems(
+    path: string,
+    count: number = 30,
+    offset: number = 0
+  ): Observable<HnItem[]> {
     return this.http.get(this.baseUrl + path).pipe(
+      map((e) => e.slice(offset, count)),
       switchMap((e) => {
         return forkJoin(e.map((itemId) => this.getItem(itemId)));
       })
@@ -23,6 +28,14 @@ export class HnApiService {
   }
 
   getItem(id: number): Observable<any> {
-    return this.http.get(this.baseUrl + `item/${id}.json`);
+    return this.http.get(this.baseUrl + `item/${id}.json`).pipe(
+      map((e: any) => {
+        if (e.url && typeof e.url === "string") {
+          const url: URL = new URL(e.url);
+          e.hostname = url.hostname.replace("www.", "");
+        }
+        return e;
+      })
+    );
   }
 }

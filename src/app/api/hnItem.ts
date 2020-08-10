@@ -9,6 +9,7 @@ export class HnItem {
   poll: any;
   kids: number[];
   url: string;
+  hostname?: string;
   score: number;
   title: string;
   parts: any;
