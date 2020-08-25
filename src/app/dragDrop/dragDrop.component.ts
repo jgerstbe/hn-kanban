@@ -13,7 +13,7 @@ import { HnItem } from "../api/hnItem";
 @Component({
   selector: "dragDrop",
   templateUrl: "dragDrop.component.html",
-  styleUrls: ["dragDrop.component.css"]
+  styleUrls: ["dragDrop.component.scss"]
 })
 export class dragDropComponent implements OnInit {
   newsItems: HnItem[] = [];
