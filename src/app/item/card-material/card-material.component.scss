@@ -1,0 +1,35 @@
+.example-card {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 14px;
+    border-bottom: solid 1px #ccc;
+}
+
+.example-card .mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.example-card:last-child {
+    border: none;
+}
+
+/* links */
+
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+a.hn {
+    color: #fc6600;
+}
+
+a.title {
+    font-size: 1rem;
+}
+
+.secondRow {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}

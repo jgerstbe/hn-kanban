@@ -19,7 +19,7 @@ export class HnApiService {
     count: number = 30,
     offset: number = 0
   ): Observable<HnItem[]> {
-    return this.http.get(this.baseUrl + path).pipe(
+    return this.http.get<number[]>(this.baseUrl + path).pipe(
       map((e) => e.slice(offset, count)),
       switchMap((e) => {
         return forkJoin(e.map((itemId) => this.getItem(itemId)));
@@ -27,7 +27,7 @@ export class HnApiService {
     );
   }
 
-  getItem(id: number): Observable<any> {
+  getItem(id: number): Observable<HnItem> {
     return this.http.get(this.baseUrl + `item/${id}.json`).pipe(
       map((e: any) => {
         if (e.url && typeof e.url === "string") {

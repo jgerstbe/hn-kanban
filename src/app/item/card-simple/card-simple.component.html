@@ -1,0 +1,29 @@
+<div class="example-box">
+    <div>
+        <strong>
+            <a target="_blank" [href]="item.url">{{item.title}}</a> </strong>&nbsp;
+        <a *ngIf="item.hostname" class="hn" target="_blank"
+            [href]="'https://news.ycombinator.com/from?site='+item.hostname">
+            ({{item.hostname}})
+        </a>
+    </div>
+    <div class="row">
+        <span>by {{item.by}}&nbsp;</span>
+        <span>Points: {{item.score}}&nbsp;</span>
+        <span>{{foregoneTime(item.time)}} ago&nbsp;</span>
+    </div>
+    <div class="row">
+        
+      <button mat-flat-button>Hide</button>
+      <a target="_blank" [href]="item.url">
+          <button mat-flat-button>Visit</button>
+      </a>
+      <a target="_blank" [href]="'https://news.ycombinator.com/item?id='+item.id">
+        <button mat-flat-button>{{item.descendants}} comments</button>
+      </a>
+        <!-- <span>Hide</span>
+        <a target="_blank" [href]="item.url">Visit</a>
+        <a class="hn" target="_blank" [href]="'https://news.ycombinator.com/item?id='+item.id">{{item.descendants}}
+            comments</a> -->
+    </div>
+</div>

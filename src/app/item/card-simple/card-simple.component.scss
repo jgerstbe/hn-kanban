@@ -1,0 +1,42 @@
+.example-box {
+    padding: 10px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+}
+
+.example-box div {
+    width: 100%;
+}
+
+.example-box:last-child {
+    border: none;
+}
+
+.row {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* links */
+
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+a.hn {
+    color: #fc6600;
+}
+
+// button[mat-flat-button] {
+//     border: 1px solid lightgrey;
+// }

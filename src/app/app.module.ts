@@ -11,9 +11,11 @@ import { MatCardModule } from "@angular/material/card";
 // components
 import { AppComponent } from "./app.component";
 import { dragDropComponent } from "./dragDrop/dragDrop.component";
+import { CardMaterialComponent } from './item/card-material/card-material.component';
+import { CardSimpleComponent } from './item/card-simple/card-simple.component';
 
 @NgModule({
-  declarations: [AppComponent, dragDropComponent],
+  declarations: [AppComponent, dragDropComponent, CardMaterialComponent, CardSimpleComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
