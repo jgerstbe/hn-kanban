@@ -6,6 +6,6 @@ HackerNews reader in the style of a kanban board.
 
 # tech
 
-- Angular
-- Angular Material
+- [Angular](https://github.com/angular/angular)
+- [Angular Material](https://github.com/angular/components)
 - [HackerNews API](https://github.com/HackerNews/API)
