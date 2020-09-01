@@ -22,6 +22,7 @@ export class HnApiService {
     return this.http.get<number[]>(this.baseUrl + path).pipe(
       map((e) => e.slice(offset, count)),
       switchMap((e) => {
+        e = e.filter(item => item !== null);
         return forkJoin(e.map((itemId) => this.getItem(itemId)));
       })
     );
@@ -30,7 +31,7 @@ export class HnApiService {
   getItem(id: number): Observable<HnItem> {
     return this.http.get(this.baseUrl + `item/${id}.json`).pipe(
       map((e: any) => {
-        if (e.url && typeof e.url === "string") {
+        if (e && e.url && typeof e.url === "string") {
           const url: URL = new URL(e.url);
           e.hostname = url.hostname.replace("www.", "");
         }

@@ -1,1 +1,10 @@
-<dragDrop></dragDrop>
+<mat-drawer-container class="example-container" [hasBackdrop]="hasBackdrop">
+    <mat-drawer #drawer [mode]="drawserMode">
+    </mat-drawer>
+    <mat-drawer-content>
+        <p style="margin-left:10px;">
+            <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+        </p>
+        <dragDrop></dragDrop>
+    </mat-drawer-content>
+</mat-drawer-container>
