@@ -1,3 +1,7 @@
+<p style="margin-left:10px;">
+  <button mat-raised-button (click)="cardType = cardType === 'simple' ? 'material' : 'simple'">Toggle card type</button>
+</p>
+
 <div class="example-container">
   <h2>News 📰</h2>
 
@@ -10,7 +14,12 @@
       class=""
       (cdkDropListDropped)="drop($event)"
     >
-      <app-card-simple *ngFor="let item of newsItems" [item]="item" cdkDrag></app-card-simple>
+      <ng-container *ngIf="cardType === 'simple'">
+        <app-card-simple *ngFor="let item of newsItems" [item]="item" cdkDrag></app-card-simple>
+      </ng-container>
+      <ng-container *ngIf="cardType === 'material'">
+        <app-card-material *ngFor="let item of newsItems" [item]="item" cdkDrag></app-card-material>
+      </ng-container>
     </div>
   </div>
 </div>
@@ -26,7 +35,12 @@
     class="example-list"
     (cdkDropListDropped)="drop($event)"
   >
-    <app-card-material *ngFor="let item of topItems" [item]="item" cdkDrag></app-card-material>
+    <ng-container *ngIf="cardType === 'simple'">
+      <app-card-simple *ngFor="let item of topItems" [item]="item" cdkDrag></app-card-simple>
+    </ng-container>
+    <ng-container *ngIf="cardType === 'material'">
+      <app-card-material *ngFor="let item of topItems" [item]="item" cdkDrag></app-card-material>
+    </ng-container>
   </div>
 </div>
 
@@ -41,9 +55,12 @@
     class="example-list"
     (cdkDropListDropped)="drop($event)"
   >
-    <div class="example-box" *ngFor="let item of watchItems" cdkDrag>
-      {{item.title}}
-    </div>
+    <ng-container *ngIf="cardType === 'simple'">
+      <app-card-simple *ngFor="let item of watchItems" [item]="item" cdkDrag></app-card-simple>
+    </ng-container>
+    <ng-container *ngIf="cardType === 'material'">
+      <app-card-material *ngFor="let item of watchItems" [item]="item" cdkDrag></app-card-material>
+    </ng-container>
   </div>
 </div>
 
@@ -58,8 +75,11 @@
     class="example-list"
     (cdkDropListDropped)="drop($event)"
   >
-    <div class="example-box" *ngFor="let item of readLaterItems" cdkDrag>
-      {{item.title}}
-    </div>
+    <ng-container *ngIf="cardType === 'simple'">
+      <app-card-simple *ngFor="let item of readLaterItems" [item]="item" cdkDrag></app-card-simple>
+    </ng-container>
+    <ng-container *ngIf="cardType === 'material'">
+      <app-card-material *ngFor="let item of readLaterItems" [item]="item" cdkDrag></app-card-material>
+    </ng-container>
   </div>
 </div>

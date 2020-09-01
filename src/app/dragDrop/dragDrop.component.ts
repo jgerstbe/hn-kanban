@@ -20,6 +20,7 @@ export class dragDropComponent implements OnInit {
   topItems: HnItem[] = [];
   readLaterItems: HnItem[] = [];
   watchItems: HnItem[] = [];
+  cardType: string = 'simple';
 
   constructor(private hnApi: HnApiService) {}
 
