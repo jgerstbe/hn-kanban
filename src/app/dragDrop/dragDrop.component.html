@@ -2,29 +2,29 @@
   <button mat-raised-button (click)="cardType = cardType === 'simple' ? 'material' : 'simple'">Toggle card type</button>
 </p>
 
-<div class="example-container">
-  <h2>News 📰</h2>
+<div class="itemContainer">
+  <h2>New 📰</h2>
 
-  <div class="example-list">
+  <div class="itemList">
     <div
       cdkDropList
       #newsList="cdkDropList"
-      [cdkDropListData]="newsItems"
+      [cdkDropListData]="newItems"
       [cdkDropListConnectedTo]="[topList, newsList, readLaterList, watchList]"
       class=""
       (cdkDropListDropped)="drop($event)"
     >
       <ng-container *ngIf="cardType === 'simple'">
-        <app-card-simple *ngFor="let item of newsItems" [item]="item" cdkDrag></app-card-simple>
+        <app-card-simple *ngFor="let item of newItems" [item]="item" [clickHandler]="onClick" cdkDrag></app-card-simple>
       </ng-container>
       <ng-container *ngIf="cardType === 'material'">
-        <app-card-material *ngFor="let item of newsItems" [item]="item" cdkDrag></app-card-material>
+        <app-card-material *ngFor="let item of newItems" [item]="item" [clickHandler]="onClick" cdkDrag></app-card-material>
       </ng-container>
     </div>
   </div>
 </div>
 
-<div class="example-container">
+<div class="itemContainer">
   <h2>Top 🔝</h2>
 
   <div
@@ -32,19 +32,19 @@
     #topList="cdkDropList"
     [cdkDropListData]="topItems"
     [cdkDropListConnectedTo]="[topList, newsList, readLaterList, watchList]"
-    class="example-list"
+    class="itemList"
     (cdkDropListDropped)="drop($event)"
   >
     <ng-container *ngIf="cardType === 'simple'">
-      <app-card-simple *ngFor="let item of topItems" [item]="item" cdkDrag></app-card-simple>
+      <app-card-simple *ngFor="let item of topItems" [item]="item" [clickHandler]="onClick" cdkDrag></app-card-simple>
     </ng-container>
     <ng-container *ngIf="cardType === 'material'">
-      <app-card-material *ngFor="let item of topItems" [item]="item" cdkDrag></app-card-material>
+      <app-card-material *ngFor="let item of topItems" [item]="item" [clickHandler]="onClick" cdkDrag></app-card-material>
     </ng-container>
   </div>
 </div>
 
-<div class="example-container">
+<div class="itemContainer">
   <h2>Watching 🔍</h2>
 
   <div
@@ -52,19 +52,19 @@
     #watchList="cdkDropList"
     [cdkDropListData]="watchItems"
     [cdkDropListConnectedTo]="[topList, newsList, readLaterList, watchList]"
-    class="example-list"
+    class="itemList"
     (cdkDropListDropped)="drop($event)"
   >
     <ng-container *ngIf="cardType === 'simple'">
-      <app-card-simple *ngFor="let item of watchItems" [item]="item" cdkDrag></app-card-simple>
+      <app-card-simple *ngFor="let item of watchItems" [item]="item" [clickHandler]="onClick" cdkDrag></app-card-simple>
     </ng-container>
     <ng-container *ngIf="cardType === 'material'">
-      <app-card-material *ngFor="let item of watchItems" [item]="item" cdkDrag></app-card-material>
+      <app-card-material *ngFor="let item of watchItems" [item]="item" [clickHandler]="onClick" cdkDrag></app-card-material>
     </ng-container>
   </div>
 </div>
 
-<div class="example-container">
+<div class="itemContainer">
   <h2>Read later ⏲️</h2>
 
   <div
@@ -72,14 +72,14 @@
     #readLaterList="cdkDropList"
     [cdkDropListData]="readLaterItems"
     [cdkDropListConnectedTo]="[topList, newsList, readLaterList, watchList]"
-    class="example-list"
+    class="itemList"
     (cdkDropListDropped)="drop($event)"
   >
     <ng-container *ngIf="cardType === 'simple'">
-      <app-card-simple *ngFor="let item of readLaterItems" [item]="item" cdkDrag></app-card-simple>
+      <app-card-simple *ngFor="let item of readLaterItems" [item]="item" [clickHandler]="onClick" cdkDrag></app-card-simple>
     </ng-container>
     <ng-container *ngIf="cardType === 'material'">
-      <app-card-material *ngFor="let item of readLaterItems" [item]="item" cdkDrag></app-card-material>
+      <app-card-material *ngFor="let item of readLaterItems" [item]="item" [clickHandler]="onClick" cdkDrag></app-card-material>
     </ng-container>
   </div>
 </div>

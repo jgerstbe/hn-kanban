@@ -1,7 +1,11 @@
-mat-drawer-container {
+mat-drawer-container, mat-drawer {
   font-family: sans-serif;
-  background-color: #222831;
+  background-color: #222831!important;
   color: white;
+}
+
+mar-drawer {
+  border-right: 1px solid white!important;
 }
 
 mat-drawer {

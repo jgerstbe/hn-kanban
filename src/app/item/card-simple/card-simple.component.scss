@@ -1,4 +1,4 @@
-.example-box {
+.itemBox {
     padding: 10px 10px;
     border-bottom: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
@@ -12,11 +12,11 @@
     font-size: 14px;
 }
 
-.example-box div {
+.itemBox div {
     width: 100%;
 }
 
-.example-box:last-child {
+.itemBox:last-child {
     border: none;
 }
 

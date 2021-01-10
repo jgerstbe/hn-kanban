@@ -1,4 +1,4 @@
-<div class="example-box">
+<div class="itemBox">
     <div>
         <strong>
             <a target="_blank" [href]="item.url">{{item.title}}</a> </strong>&nbsp;
@@ -14,13 +14,12 @@
     </div>
     <div class="row">
         
-      <button mat-flat-button>Hide</button>
-      <a target="_blank" [href]="item.url">
+      <button disabled mat-flat-button>Hide</button>
+      <!-- <a target="_blank" [href]="item.url">
           <button mat-flat-button>Visit</button>
-      </a>
-      <a target="_blank" [href]="'https://news.ycombinator.com/item?id='+item.id">
-        <button mat-flat-button>{{item.descendants}} comments</button>
-      </a>
+      </a> -->
+      <button mat-flat-button (click)="click('visit', item.url)">Visit</button>
+      <button mat-flat-button (click)="click('comments', 'https://news.ycombinator.com/item?id='+item.id)">{{item.descendants}} comments</button>
         <!-- <span>Hide</span>
         <a target="_blank" [href]="item.url">Visit</a>
         <a class="hn" target="_blank" [href]="'https://news.ycombinator.com/item?id='+item.id">{{item.descendants}}
