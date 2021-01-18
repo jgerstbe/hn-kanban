@@ -8,6 +8,7 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 // components
 import { AppComponent } from "./app.component";
@@ -24,6 +25,7 @@ import { CardSimpleComponent } from './item/card-simple/card-simple.component';
     MatButtonModule,
     MatCardModule,
     MatSidenavModule,
+    MatPaginatorModule,
     HttpClientModule
   ],
   providers: [],

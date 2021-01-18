@@ -1,6 +1,6 @@
-<p style="margin-left:10px;">
+<!-- <p style="margin-left:10px;">
   <button mat-raised-button (click)="cardType = cardType === 'simple' ? 'material' : 'simple'">Toggle card type</button>
-</p>
+</p> -->
 
 <div class="itemContainer">
   <h2>New 📰</h2>
@@ -22,6 +22,8 @@
       </ng-container>
     </div>
   </div>
+  <mat-paginator (page)="onPageChange($event.pageIndex, 'new')" [hidePageSize]="true" [pageSize]="30" [length]="150">
+  </mat-paginator>
 </div>
 
 <div class="itemContainer">
@@ -42,6 +44,8 @@
       <app-card-material *ngFor="let item of topItems" [item]="item" [clickHandler]="onClick" cdkDrag></app-card-material>
     </ng-container>
   </div>
+  <mat-paginator (page)="onPageChange($event.pageIndex, 'top')" [hidePageSize]="true" [pageSize]="30" [length]="150">
+  </mat-paginator>
 </div>
 
 <div class="itemContainer">

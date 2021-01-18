@@ -21,7 +21,7 @@
   margin: 0 0 0 15px;
   display: inline-block;
   vertical-align: top;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .itemContainer h2 {
@@ -35,7 +35,7 @@
   border-radius: 4px;
   overflow: hidden scroll;
   display: block;
-  height: 90vh;
+  height: 85vh;
 }
 
 .cdk-drag-preview {
@@ -55,4 +55,9 @@
 
 .itemList.cdk-drop-list-dragging .itemBox:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+mat-paginator {
+  border-radius: 4px;
+  margin-top: 3px;
 }

@@ -4,11 +4,10 @@ mat-drawer-container, mat-drawer {
   color: white;
 }
 
-mar-drawer {
-  border-right: 1px solid white!important;
-}
-
 mat-drawer {
+  border-right: 1px solid white!important;
+  padding-right: 5px;
   min-width: 300px;
   width: 50vw;
+  // max-height: 100vh;
 }
