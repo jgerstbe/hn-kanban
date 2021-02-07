@@ -9,6 +9,6 @@
         <!-- <p style="margin-left:10px;">
             <button mat-raised-button (click)="drawerIsOpen ? closeDrawer() : openInDrawer('')">Toggle drawer</button>
         </p> -->
-        <dragDrop (onOpenDrawer)="openInDrawer($event)"></dragDrop>
+        <dragDrop (onOpenLink)="openInNewTab($event)"></dragDrop>
     </mat-drawer-content>
 </mat-drawer-container>

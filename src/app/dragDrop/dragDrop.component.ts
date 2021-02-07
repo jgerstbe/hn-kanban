@@ -17,7 +17,7 @@ import { Subject } from "rxjs";
   styleUrls: ["dragDrop.component.scss"]
 })
 export class dragDropComponent implements OnInit {
-  @Output('onOpenDrawer') onOpenDrawer: EventEmitter<string> = new EventEmitter();
+  @Output('onOpenLink') onOpenLink: EventEmitter<string> = new EventEmitter();
   onClick: Subject<any> = new Subject();
   newItems: HnItem[] = [];
   topItems: HnItem[] = [];
@@ -37,7 +37,7 @@ export class dragDropComponent implements OnInit {
     this.loadList('hn-kanban-watching');
     this.loadList('hn-kanban-read-later');
     this.onClick.subscribe(data => {
-      this.onOpenDrawer.emit(data.url);
+      this.onOpenLink.emit(data.url);
     })
   }
 

@@ -32,6 +32,11 @@ export class AppComponent implements OnInit {
     console.error(e);
   }
 
+  openInNewTab(url: string) {
+    console.log('openInNewTab', );
+    window.open(url, '_blank');
+  }
+
   openInDrawer(url: string) {
     console.log('openInDrawer', url);
     this.drawerSource = this.sanitizer.bypassSecurityTrustResourceUrl(url);
